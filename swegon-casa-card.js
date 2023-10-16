@@ -20,28 +20,28 @@ class SwegonCasaCard extends LitElement {
       <div class="bg">
           <div class="flex-container">
               <div class="flex-col-out">
-                  <div>${this.hass.states['sensor.outside_air'].state}°C</div>
-                  <div class="fan-state"><ha-icon icon="mdi:speedometer"></ha-icon></ha-icon> ${Math.trunc(this.hass.states['sensor.fan_speed_supply'].state)} rpm</div>
-                  <div>${this.hass.states['sensor.exhaust_air'].state}°C</div>
-                  <div class="fan-state"><ha-icon icon="mdi:speedometer"></ha-icon> ${Math.trunc(this.hass.states['sensor.fan_speed_exhaust'].state)} rpm</div>
+                  <div>${this.hass.states['sensor.swegon_external_fresh_air_temperature'].state}°C</div>
+                  <div class="fan-state"><ha-icon icon="mdi:speedometer"></ha-icon></ha-icon> ${Math.trunc(this.hass.states['sensor.swegon_supply_fan_rpm'].state)} rpm</div>
+                  <div>${this.hass.states['sensor.swegon_exhaust_air_temperature'].state}°C</div>
+                  <div class="fan-state"><ha-icon icon="mdi:speedometer"></ha-icon> ${Math.trunc(this.hass.states['sensor.swegon_extract_fan_rpm'].state)} rpm</div>
               </div>
               <div class="flex-col-main">
                   <div>${this.hass.states[this.config.entity].attributes.temperature}°C</div>
-                  <div><ha-icon class="spin" icon="mdi:${({'auto': 'fan', 'off': 'fan-off', low: 'fan-speed-1', medium: 'fan-speed-2', high: 'fan-speed-3'}[this.hass.states[this.config.entity].attributes.fan_mode])}"></ha-icon></div> 
+                  <div><ha-icon class="spin" icon="mdi:${({'Stopped': 'fan-off', 'Away': 'home-export-outline', 'Home': 'home-outline', 'Boost': 'fan-plus', 'Travelling': 'airplane-takeoff'}[this.hass.states['select.swegon_operating_mode'].state])}"></ha-icon></div> 
               </div>
               <div class="flex-col-in">
-                  <div>${this.hass.states['sensor.return_air'].state}°C</div>
-                  <div class="fan-state"><ha-icon icon="mdi:fan"></ha-icon> ${Math.trunc(this.hass.states['sensor.return_air_level'].state)}%</div>
-                  <div>${this.hass.states['sensor.supply_air'].state}°C</div>
-                  <div class="fan-state"><ha-icon icon="mdi:fan"></ha-icon> ${Math.trunc(this.hass.states['sensor.supply_air_level'].state)}%</div>
+                  <div>${this.hass.states['sensor.swegon_extract_air_temp'].state}°C</div>
+                  <div class="fan-state"><ha-icon icon="mdi:fan"></ha-icon> ${Math.trunc(this.hass.states['sensor.swegon_exhaust_fan_control'].state)}%</div>
+                  <div>${this.hass.states['sensor.swegon_supply_air_temp'].state}°C</div>
+                  <div class="fan-state"><ha-icon icon="mdi:fan"></ha-icon> ${Math.trunc(this.hass.states['sensor.swegon_supply_fan_control'].state)}%</div>
               </div>
           </div>
       </div>
       </div>
       <div class="info-row">
-      ${this.getFanTmpl()}
+      <!-- ${this.getFanTmpl()} -->
       ${this.getAirFilterTmpl()}
-      ${this.getBypassTmpl()}
+      <!-- ${this.getBypassTmpl()} -->
       ${this.getPreHeatTmpl()}
       ${this.getSummerModeTmpl()}
       </div>
@@ -49,32 +49,32 @@ class SwegonCasaCard extends LitElement {
     `;
   }
 
-  getFanTmpl() {
-    if (this.hass.states['binary_sensor.supply_fan'].state == 'on') {
-      return html `<ha-icon icon="mdi:fan"></ha-icon>`;
-    } else {
-      return html `<ha-icon class="inactive" icon="mdi:fan"></ha-icon>`;
-    }
-  }
+//  getFanTmpl() {
+//    if (this.hass.states['binary_sensor.supply_fan'].state == 'on') {
+//      return html `<ha-icon icon="mdi:fan"></ha-icon>`;
+//    } else {
+//      return html `<ha-icon class="inactive" icon="mdi:fan"></ha-icon>`;
+//    }
+//  }
 
   getAirFilterTmpl() {
-    if (this.hass.states['binary_sensor.filter_full'].state != 'on') {
+    if (this.hass.states['binary_sensor.swegon_filter_guard_info'].state != 'on') {
       return html `<ha-icon class="inactive" icon="mdi:air-filter"></ha-icon>`;
     } else {
       return html `<ha-icon class="warning" icon="mdi:air-filter"></ha-icon>`;
     }
   }
 
-  getBypassTmpl() {
-    if (this.hass.states['binary_sensor.bypass_valve'].state == 'on') {
-      return html `<ha-icon icon="mdi:electric-switch"></ha-icon>`;
-    } else {
-      return html `<ha-icon class="inactive" icon="mdi:electric-switch"></ha-icon>`;
-    }
-  }
+//  getBypassTmpl() {
+//    if (this.hass.states['binary_sensor.bypass_valve'].state == 'on') {
+//      return html `<ha-icon icon="mdi:electric-switch"></ha-icon>`;
+//    } else {
+//      return html `<ha-icon class="inactive" icon="mdi:electric-switch"></ha-icon>`;
+//    }
+//  }
 
   getPreHeatTmpl() {
-    if (this.hass.states['binary_sensor.preheating'].state == 'on') {
+    if (this.hass.states['binary_sensor.swegon_preheater_active'].state == 'on') {
       return html `<ha-icon icon="mdi:radiator"></ha-icon>`;
     } else {
       return html `<ha-icon class="inactive" icon="mdi:radiator"></ha-icon>`;
@@ -82,7 +82,7 @@ class SwegonCasaCard extends LitElement {
   }
 
   getSummerModeTmpl() {
-    if (this.hass.states['binary_sensor.summer_mode'].state == 'off') {
+    if (this.hass.states['binary_sensor.swegon_summer_cooling_active'].state == 'off') {
       return html `<ha-icon icon="mdi:snowflake"></ha-icon>`;
     } else {
       return html `<ha-icon class="inactive" icon="mdi:weather-sunny"></ha-icon>`;
