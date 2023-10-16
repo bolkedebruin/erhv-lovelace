@@ -4,7 +4,7 @@ Use Modbus to connect your Swegon Casa to Homeassistant and then use this lovela
 
 # Installation
 
-* Clone this repo into your `www` folder inside your configuration. So it will be: `config_folder/www/lovelace-comfoair`. 
+* Clone this repo into your `www` folder inside your configuration. So it will be: `config_folder/www/lovelace-swegon-casa`. 
 * Edit your lovelace-ui.yaml or use the flat configuration mode in lovelace and add to the top:
 ```
 resources:
