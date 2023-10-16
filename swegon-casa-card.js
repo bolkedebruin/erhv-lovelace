@@ -39,9 +39,7 @@ class SwegonCasaCard extends LitElement {
       </div>
       </div>
       <div class="info-row">
-      <!-- ${this.getFanTmpl()} -->
       ${this.getAirFilterTmpl()}
-      <!-- ${this.getBypassTmpl()} -->
       ${this.getPreHeatTmpl()}
       ${this.getSummerModeTmpl()}
       </div>
