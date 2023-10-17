@@ -228,7 +228,7 @@ class SwegonCasaCard extends LitElement {
     
     @keyframes spin {
       100% {transform:rotate(360deg);}
-    };
+    }`;
   }
 }
 customElements.define("swegon-casa-card", SwegonCasaCard);
