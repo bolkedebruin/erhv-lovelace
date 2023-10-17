@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -11,14 +9,14 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   id="svg815"
-   width="839"
-   height="268"
-   viewBox="0 0 839 268"
+   viewBox="0 0 839 330"
+   id="svg23"
    sodipodi:docname="swegon_casa_heat.svg"
+   width="839"
+   height="330"
    inkscape:version="0.92.3 (2405546, 2018-03-11)">
   <metadata
-     id="metadata821">
+     id="metadata27">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -29,106 +27,6 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <defs
-     id="defs819">
-    <inkscape:path-effect
-       effect="mirror_symmetry"
-       start_point="0,134"
-       end_point="839,134"
-       center_point="419.5,134"
-       id="path-effect900"
-       is_visible="true"
-       mode="horizontal"
-       discard_orig_path="false"
-       fuse_paths="false"
-       oposite_fuse="false" />
-    <inkscape:path-effect
-       effect="mirror_symmetry"
-       start_point="419.5,0"
-       end_point="419.5,268"
-       center_point="419.5,134"
-       id="path-effect898"
-       is_visible="true"
-       mode="vertical"
-       discard_orig_path="false"
-       fuse_paths="false"
-       oposite_fuse="false" />
-    <inkscape:path-effect
-       effect="mirror_symmetry"
-       start_point="23.478808,33.907902"
-       end_point="75.179489,33.907902"
-       center_point="49.329149,33.907902"
-       id="path-effect895"
-       is_visible="true"
-       mode="free"
-       discard_orig_path="false"
-       fuse_paths="true"
-       oposite_fuse="false" />
-    <inkscape:path-effect
-       effect="mirror_symmetry"
-       start_point="74.97,33.55"
-       end_point="300.2,168"
-       center_point="187.585,100.775"
-       id="path-effect893"
-       is_visible="true"
-       mode="free"
-       discard_orig_path="false"
-       fuse_paths="false"
-       oposite_fuse="false" />
-    <inkscape:path-effect
-       effect="mirror_symmetry"
-       start_point="23.085621,33.714289"
-       end_point="75.306122,33.714289"
-       center_point="75.306122,33.714289"
-       id="path-effect889"
-       is_visible="true"
-       mode="Y"
-       discard_orig_path="false"
-       fuse_paths="false"
-       oposite_fuse="false" />
-    <linearGradient
-       inkscape:collect="always"
-       id="5">
-      <stop
-         style="stop-color:#fd7c7a;stop-opacity:1"
-         offset="0"
-         id="stop854" />
-      <stop
-         style="stop-color:#acc0e5;stop-opacity:1"
-         offset="1"
-         id="stop856" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#5"
-       id="linearGradient860"
-       x1="679.02777"
-       y1="205.6765"
-       x2="157.89993"
-       y2="205.96788"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-0.62658699,114.66543)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#5"
-       id="linearGradient885"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(1.1163925,-0.67584746)"
-       x1="679.02777"
-       y1="205.6765"
-       x2="157.89993"
-       y2="205.96788" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#5"
-       id="linearGradient885-0"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1,0,0,-1,1.1163932,268.67585)"
-       x1="679.02777"
-       y1="205.6765"
-       x2="157.89993"
-       y2="205.96788" />
-  </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -139,51 +37,106 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1013"
-     id="namedview817"
+     inkscape:window-height="1147"
+     id="namedview25"
      showgrid="false"
-     inkscape:pagecheckerboard="true"
-     inkscape:zoom="1.5959476"
+     inkscape:zoom="1"
      inkscape:cx="419.5"
-     inkscape:cy="249.54166"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
+     inkscape:cy="134"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg815" />
-  <path
-     style="fill:url(#linearGradient885);fill-opacity:1;stroke:#000000;stroke-width:1.51181102;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="M 2.3479999,2.9373825 H 170.31644 L 680.14415,205.00066 836.652,205.34798 836.35687,264.81782 668.76212,265.06262 158.31644,62.146313 H 2.3479999 Z"
-     id="rect851"
-     inkscape:connector-curvature="0"
-     sodipodi:nodetypes="ccccccccc" />
-  <path
-     style="fill:url(#linearGradient885-0);fill-opacity:1;stroke:#000000;stroke-width:1.51181102;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="M 2.3480006,265.06262 H 170.31644 L 680.14415,62.999345 836.652,62.652025 836.35687,3.182185 668.76212,2.937385 158.31644,205.85369 H 2.3480006 Z"
-     id="rect851-0"
-     inkscape:connector-curvature="0"
-     sodipodi:nodetypes="ccccccccc" />
-  <path
-     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="m 20,39.050759 h 38.018839 v 7.084773 l 14.22763,-14.22763 -14.22763,-14.22763 v 7.084773 H 20 Z"
-     id="path891"
-     inkscape:connector-curvature="0"
-     sodipodi:nodetypes="cccccccc" />
-  <path
-     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="m 819,38.919556 h -38.01884 v 7.084773 l -14.22763,-14.22763 14.22763,-14.22763 v 7.084773 H 819 Z"
-     id="path891-5"
-     inkscape:connector-curvature="0"
-     sodipodi:nodetypes="cccccccc" />
-  <path
-     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="M 72.246469,243.67735 H 34.22763 v 7.08477 L 20,236.53449 34.22763,222.30686 v 7.08478 h 38.018839 z"
-     id="path891-3"
-     inkscape:connector-curvature="0"
-     sodipodi:nodetypes="cccccccc" />
-  <path
-     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="m 766.75353,243.67735 h 38.01884 v 7.08477 L 819,236.53449 804.77237,222.30686 v 7.08478 h -38.01884 z"
-     id="path891-3-2"
-     inkscape:connector-curvature="0"
-     sodipodi:nodetypes="cccccccc" />
-</svg>
+     inkscape:current-layer="svg23" />
+  <defs
+     id="defs7">
+    <linearGradient
+       id="redblue">
+      <stop
+         stop-color="#fd7c7a"
+         offset="0"
+         id="stop2" />
+      <stop
+         stop-color="#acc0e5"
+         offset="1"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#redblue"
+       id="linearGradient837"
+       gradientTransform="matrix(1.7805583,0,0,0.56162159,0,62)"
+       x1="0.89415771"
+       y1="3.8842878"
+       x2="470.30972"
+       y2="3.8842878"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#redblue"
+       id="linearGradient839"
+       gradientTransform="matrix(1.7805583,0,0,0.56162159,0,62)"
+       x1="0.89415771"
+       y1="3.8851426"
+       x2="470.30972"
+       y2="3.8851426"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     id="g848"
+     transform="translate(-0.00299982,-30.9987)">
+    <path
+       style="fill:url(#linearGradient837);stroke:#000000;stroke-width:1.51180005;stroke-linejoin:round"
+       inkscape:connector-curvature="0"
+       id="path9"
+       d="m 2.348,64.9374 h 167.97 l 509.83,202.06 156.51,0.34732 -0.29513,59.47 -167.59,0.2448 -510.45,-202.92 h -155.97 z" />
+    <path
+       style="fill:url(#linearGradient839);stroke:#000000;stroke-width:1.51180005;stroke-linejoin:round"
+       inkscape:connector-curvature="0"
+       id="path11"
+       d="m 2.348,327.06 h 167.97 L 680.148,125 l 156.51,-0.34732 -0.29513,-59.47 -167.59,-0.2448 -510.45,202.92 h -155.97 z" />
+    <g
+       transform="translate(0,62)"
+       style="fill:#ffffff"
+       id="g21">
+      <path
+         inkscape:connector-curvature="0"
+         id="path13"
+         d="m 20,39.051 h 38.019 v 7.0848 L 72.247,31.9078 58.019,17.6798 v 7.0848 H 20 Z" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path15"
+         d="m 819,38.92 h -38.019 v 7.0848 l -14.228,-14.228 14.228,-14.228 v 7.0848 H 819 Z" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path17"
+         d="M 72.246,243.68 H 34.227 v 7.0848 l -14.228,-14.228 14.228,-14.228 v 7.0848 h 38.019 z" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path19"
+         d="m 766.75,243.68 h 38.019 v 7.0848 l 14.228,-14.228 -14.228,-14.228 v 7.0848 H 766.75 Z" />
+    </g>
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="4"
+     y="25"
+     id="text852"><tspan
+       sodipodi:role="line"
+       id="tspan850"
+       x="4"
+       y="25"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:sans-serif;-inkscape-font-specification:sans-serif">10.6 C </tspan></text>
+  <flowRoot
+     xml:space="preserve"
+     id="flowRoot854"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     transform="translate(1.0859375)"><flowRegion
+       id="flowRegion856"><rect
+         id="rect858"
+         width="97"
+         height="66"
+         x="368"
+         y="45" /></flowRegion><flowPara
+       id="flowPara860"
+       style="text-align:center;text-anchor:middle">17 C</flowPara></flowRoot></svg>
