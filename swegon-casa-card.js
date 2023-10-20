@@ -141,7 +141,7 @@ class SwegonCasaCard extends LitElement {
                     <!--<svg>
                       <use class="spin_extract" xlink:href='#fan' />
                     </svg>-->
-                    <ha-icon class="icon spin" icon="mdi:fan"></ha-icon>
+                    <ha-icon class="spin icon" icon="mdi:fan"></ha-icon>
                   </div>
                 </foreignObject>
               </g>
