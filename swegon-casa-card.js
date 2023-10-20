@@ -15,7 +15,7 @@ class SwegonCasaCard extends LitElement {
 
   static getConfigElement() {
     // Create and return an editor element
-    return document.createElement("my-custom-card-editor");
+    return document.createElement("swegon-casa-card-editor");
   }
 
   static getStubConfig() {
