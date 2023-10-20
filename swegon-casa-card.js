@@ -22,23 +22,19 @@ class SwegonCasaCard extends LitElement {
     // Return a minimal configuration that will result in a working card configuration
     return { entity: "" };
   }
-
-  setConfig(config) {
-    this._config = config;
-  }
-
+*/
   render() {
-    if (!this.hass || !this._config) {
+    if (!this.hass || !this.config) {
       return html`Custom card not found!`;
     }
 
-    const stateObj = this.hass.states[this._config.entity];
+    const stateObj = this.hass.states[this.config.entity];
     if (!stateObj) {
-      return html` <ha-card>Unknown entity: ${this._config.entity}</ha-card> `;
+      return html` <ha-card>Unknown entity: ${this.config.entity}</ha-card> `;
     }
-*/
+
     return html `
-    <ha-card>test<!--
+    <ha-card>
       <div class="container">
         <svg version="1.1" viewBox="0 0 850 360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <defs>
@@ -175,7 +171,7 @@ class SwegonCasaCard extends LitElement {
       ${this.getAirFilterTmpl()}
       ${this.getPreHeatTmpl()}
       ${this.getSummerModeTmpl()}
-      </div>-->
+      </div>
     </ha-card>  
     `;
   }
@@ -371,6 +367,7 @@ class SwegonCasaCard extends LitElement {
   }`;
   }
 }
+
 customElements.define("swegon-casa-card", SwegonCasaCard);
 
 // Next we add our card to the list of custom cards for the card picker
