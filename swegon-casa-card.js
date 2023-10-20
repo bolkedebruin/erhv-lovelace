@@ -138,9 +138,10 @@ class SwegonCasaCard extends LitElement {
                     ${Math.trunc(this.hass.states['sensor.swegon_exhaust_fan_control'].state)}%
                   </div>
                   <div class="icon right">
-                    <svg>
+                    <!--<svg>
                       <use class="spin_extract" xlink:href='#fan' />
-                    </svg>
+                    </svg>-->
+                    <ha-icon class="icon spin" icon="mdi:fan"></ha-icon>
                   </div>
                 </foreignObject>
               </g>
@@ -292,7 +293,7 @@ class SwegonCasaCard extends LitElement {
       height: 40px;
       position: relative;
       top: 50%;
-      transform: scale(1.5,1.5);
+      transform: scale(1.5,1.5) translate(0,-50%);
   }
 
   .large_icon {
