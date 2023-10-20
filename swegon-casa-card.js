@@ -94,9 +94,10 @@ class SwegonCasaCard extends LitElement {
                 <g transform="translate(0,90)">
                   <foreignObject class="sensor">
                     <div class="icon left">
-                      <svg>
+                      <!--<svg>
                           <use xlink:href='#speed' />
-                      </svg>
+                      </svg>-->
+                      <ha-icon class="icon" icon="mdi:speedometer"></ha-icon>
                     </div>
                     <div class="label left">
                       ${Math.trunc(this.hass.states['sensor.swegon_supply_fan_rpm'].state)} rpm
