@@ -292,7 +292,7 @@ class SwegonCasaCard extends LitElement {
       height: 40px;
       position: relative;
       top: 50%;
-      transform: scale(1.5,1.5) translate(0,-50%);
+      transform: scale(1.5,1.5);
   }
 
   .large_icon {
