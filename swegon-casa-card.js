@@ -8,7 +8,7 @@ class SwegonCasaCard extends LitElement {
   static get properties() {
     return {
       hass: {},
-      _config: {}
+      config: {}
     };
   }
 
@@ -23,13 +23,13 @@ class SwegonCasaCard extends LitElement {
   }
 
   render() {
-    if (!this.hass || !this._config) {
+    if (!this.hass || !this.config) {
       return html`Custom card not found!`;
     }
 
-    const stateObj = this.hass.states[this._config.entity];
+    const stateObj = this.hass.states[this.config.entity];
     if (!stateObj) {
-      return html` <ha-card>Unknown entity: ${this._config.entity}</ha-card> `;
+      return html` <ha-card>Unknown entity: ${this.config.entity}</ha-card> `;
     }
 
     return html `
@@ -216,7 +216,7 @@ class SwegonCasaCard extends LitElement {
   }
 
   setConfig(config) {
-    this._config = config;
+    this.config = config;
   }
 
   // The height of your card. Home Assistant uses this to automatically
