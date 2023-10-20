@@ -4,7 +4,6 @@ import {
   css
 } from "https://unpkg.com/lit-element@2.0.1/lit-element.js?module";
 
-
 class SwegonCasaCard extends LitElement {
   static get properties() {
     return {
@@ -12,7 +11,7 @@ class SwegonCasaCard extends LitElement {
       config: {}
     };
   }
-/*
+
   static getConfigElement() {
     // Create and return an editor element
     return document.createElement("swegon-casa-card-editor");
@@ -22,7 +21,7 @@ class SwegonCasaCard extends LitElement {
     // Return a minimal configuration that will result in a working card configuration
     return { entity: "" };
   }
-*/
+
   render() {
     if (!this.hass || !this.config) {
       return html`Custom card not found!`;
@@ -371,7 +370,7 @@ class SwegonCasaCard extends LitElement {
 customElements.define("swegon-casa-card", SwegonCasaCard);
 
 // Next we add our card to the list of custom cards for the card picker
-/*window.customCards = window.customCards || []; // Create the list if it doesn't exist. Careful not to overwrite it
+window.customCards = window.customCards || []; // Create the list if it doesn't exist. Careful not to overwrite it
 window.customCards.push({
   type: "swegon-casa-card",
   name: "Swegon Casa Card",
@@ -429,4 +428,4 @@ class SwegonCasaCardEditor extends LitElement {
   }
 }
 
-customElements.define("swegon-casa-card-editor", SwegonCasaCardEditor);*/
+customElements.define("swegon-casa-card-editor", SwegonCasaCardEditor);
