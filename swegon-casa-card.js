@@ -29,7 +29,7 @@ class SwegonCasaCard extends LitElement {
 
   render() {
     if (!this.hass || !this._config) {
-      return html``;
+      return html`Custom card not found!`;
     }
 
     const stateObj = this.hass.states[this._config.entity];
