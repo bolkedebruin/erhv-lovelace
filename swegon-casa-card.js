@@ -8,7 +8,7 @@ class SwegonCasaCard extends LitElement {
   static get properties() {
     return {
       hass: {},
-      _config: {}
+      config: {}
     };
   }
 
@@ -23,13 +23,13 @@ class SwegonCasaCard extends LitElement {
   }
 
   render() {
-    if (!this.hass || !this._config) {
+    if (!this.hass || !this.config) {
       return html`Custom card not found!`;
     }
 
-    const stateObj = this.hass.states[this._config.entity];
+    const stateObj = this.hass.states[this.config.entity];
     if (!stateObj) {
-      return html` <ha-card>Unknown entity: ${this._config.entity}</ha-card> `;
+      return html` <ha-card>Unknown entity: ${this.config.entity}</ha-card> `;
     }
 
     return html `
@@ -216,7 +216,7 @@ class SwegonCasaCard extends LitElement {
   }
 
   setConfig(config) {
-    this._config = config;
+    this.config = config;
   }
 
   // The height of your card. Home Assistant uses this to automatically
@@ -375,29 +375,29 @@ class SwegonCasaCardEditor extends LitElement {
   static get properties() {
     return {
       hass: {},
-      _config: {},
+      config: {},
     };
   }
 
   // setConfig works the same way as for the card itself
   setConfig(config) {
-    this._config = config;
+    this.config = config;
   }
 
   // This function is called when the input element of the editor loses focus
   entityChanged(ev) {
 
     // We make a copy of the current config so we don't accidentally overwrite anything too early
-    const _config = Object.assign({}, this._config);
+    const config = Object.assign({}, this.config);
     // Then we update the entity value with what we just got from the input field
-    _config.entity = ev.target.value;
+    config.entity = ev.target.value;
     // And finally write back the updated configuration all at once
-    this._config = _config;
+    this.config = config;
 
     // A config-changed event will tell lovelace we have made changed to the configuration
     // this make sure the changes are saved correctly later and will update the preview
     const event = new CustomEvent("config-changed", {
-      detail: { config: _config },
+      detail: { config: config },
       bubbles: true,
       composed: true,
     });
@@ -405,7 +405,7 @@ class SwegonCasaCardEditor extends LitElement {
   }
 
   render() {
-    if (!this.hass || !this._config) {
+    if (!this.hass || !this.config) {
       return html``;
     }
 
@@ -413,7 +413,7 @@ class SwegonCasaCardEditor extends LitElement {
     return html`
     Entity:
     <input
-    .value=${this._config.entity}
+    .value=${this.config.entity}
     @focusout=${this.entityChanged}
     ></input>
     `;
