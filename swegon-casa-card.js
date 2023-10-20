@@ -141,7 +141,7 @@ class SwegonCasaCard extends LitElement {
                     <!--<svg>
                       <use class="spin_extract" xlink:href='#fan' />
                     </svg>-->
-                    <ha-svg-icon class="spin icon" icon="mdi:fan"></ha-icon>
+                    <ha-svg-icon class="spin icon" icon="mdi:fan"></ha-svg-icon>
                   </div>
                 </foreignObject>
               </g>
@@ -187,9 +187,9 @@ class SwegonCasaCard extends LitElement {
 
   getAirFilterTmpl() {
     if (this.hass.states['binary_sensor.swegon_filter_guard_info'].state != 'on') {
-      return html `<ha-svg-icon class="inactive" icon="mdi:air-filter"></ha-icon>`;
+      return html `<ha-svg-icon class="inactive" icon="mdi:air-filter"></ha-svg-icon>`;
     } else {
-      return html `<ha-svg-icon class="warning" icon="mdi:air-filter"></ha-icon>`;
+      return html `<ha-svg-icon class="warning" icon="mdi:air-filter"></ha-svg-icon>`;
     }
   }
 
