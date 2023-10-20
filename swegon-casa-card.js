@@ -38,7 +38,7 @@ class SwegonCasaCard extends LitElement {
     }
 
     return html `
-    <ha-card>
+    <ha-card><!--
       <div class="container">
         <svg version="1.1" viewBox="0 0 850 360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <defs>
@@ -175,7 +175,7 @@ class SwegonCasaCard extends LitElement {
       ${this.getAirFilterTmpl()}
       ${this.getPreHeatTmpl()}
       ${this.getSummerModeTmpl()}
-      </div>
+      </div>-->
     </ha-card>  
     `;
   }
