@@ -82,6 +82,7 @@ class SwegonCasaCard extends LitElement {
                   ${this.hass.states[this.config.entity].attributes.temperature}°C
                 </div>
               </foreignObject>
+            </g>
             <g class="col-out">
               <g transform="translate(0,-12)">
                 <foreignObject class="sensor">
@@ -246,7 +247,7 @@ class SwegonCasaCard extends LitElement {
       font-size: xxx-large;
       font-weight: bold;
       max-width: 100%;
-      margin: 0 auto;
+      margin: auto;
       width: 100px;
   }
 
@@ -310,6 +311,7 @@ class SwegonCasaCard extends LitElement {
   .large_label {
       position: static;
       padding-left: 0.2em;
+      bottom: 0;
   }
 
   .right {
@@ -333,8 +335,8 @@ class SwegonCasaCard extends LitElement {
       vertical-align: bottom;
       position: relative;
       margin: auto;
-      padding-left: 30px;
-      padding-right: 30px;
+      padding-left: 25px;
+      padding-right: 25px;
   }
 
   .spin_supply {
