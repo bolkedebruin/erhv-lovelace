@@ -9,10 +9,10 @@ class SwegonCasaCard extends LitElement {
   static get properties() {
     return {
       hass: {},
-      _config: {}
+      config: {}
     };
   }
-
+/*
   static getConfigElement() {
     // Create and return an editor element
     return document.createElement("swegon-casa-card-editor");
@@ -36,9 +36,9 @@ class SwegonCasaCard extends LitElement {
     if (!stateObj) {
       return html` <ha-card>Unknown entity: ${this._config.entity}</ha-card> `;
     }
-
+*/
     return html `
-    <ha-card><!--
+    <ha-card>test<!--
       <div class="container">
         <svg version="1.1" viewBox="0 0 850 360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <defs>
@@ -374,7 +374,7 @@ class SwegonCasaCard extends LitElement {
 customElements.define("swegon-casa-card", SwegonCasaCard);
 
 // Next we add our card to the list of custom cards for the card picker
-window.customCards = window.customCards || []; // Create the list if it doesn't exist. Careful not to overwrite it
+/*window.customCards = window.customCards || []; // Create the list if it doesn't exist. Careful not to overwrite it
 window.customCards.push({
   type: "swegon-casa-card",
   name: "Swegon Casa Card",
@@ -432,4 +432,4 @@ class SwegonCasaCardEditor extends LitElement {
   }
 }
 
-customElements.define("swegon-casa-card-editor", SwegonCasaCardEditor);
+customElements.define("swegon-casa-card-editor", SwegonCasaCardEditor);*/
