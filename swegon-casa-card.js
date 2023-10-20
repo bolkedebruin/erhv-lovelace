@@ -71,18 +71,17 @@ class SwegonCasaCard extends LitElement {
                 </g>
               </g>
             </g>
-            <g transform="translate(285,0)">
+            <g class="col-center" transform="translate(285,20)">
               <foreignObject class="entity">
                 <div class="large_icon left">
                   <svg>
-                    <use xlink:href='#thermometer' />
+                      <use xlink:href='#thermometer' />
                   </svg>
                 </div>
                 <div class="large_label left">
                   ${this.hass.states[this.config.entity].attributes.temperature}°C
                 </div>
               </foreignObject>
-            </g>
             <g class="col-out">
               <g transform="translate(0,-12)">
                 <foreignObject class="sensor">
@@ -229,7 +228,6 @@ class SwegonCasaCard extends LitElement {
     return css `
     .container {
       font-family: sans-serif;
-      border: dotted;
   }
 
   .bg {
@@ -247,23 +245,19 @@ class SwegonCasaCard extends LitElement {
   .col-center {
       font-size: xxx-large;
       font-weight: bold;
-      border: double;
       max-width: 100%;
-      margin: auto;
-      margin:0 auto;
-      width:100px;
+      margin: 0 auto;
+      width: 100px;
   }
 
   .col-out {
       text-anchor: start;
       font-size: xx-large;
-      border: dotted;
   }
 
   .col-in {
       text-anchor: end;
       font-size: xx-large;
-      border: dotted;
   }
 
   .fan-state {
@@ -304,7 +298,6 @@ class SwegonCasaCard extends LitElement {
       max-width: 60px;
       height: 60px;
       position: static;
-      bottom: 0;
   }
 
   .label {
@@ -315,11 +308,8 @@ class SwegonCasaCard extends LitElement {
   }
 
   .large_label {
-      font-size: xxx-large;
-      font-weight: bold;
       position: static;
       padding-left: 0.2em;
-      bottom: 0;
   }
 
   .right {
