@@ -296,7 +296,7 @@ class ZehnderCard extends LitElement {
   .icon {
       max-width: 40px;
       position: relative;
-      top: 12px;
+      top: 14px;
       transform: scale(1.5,1.5) translate(0,-50%);
       margin-left: 5px;
       margin-right: 5px;
@@ -305,8 +305,7 @@ class ZehnderCard extends LitElement {
   .medium_icon {
     max-width: 40px;
     position: relative;
-    top: 36px;
-    transform: scale(1.5,1.5) translate(0,-50%);
+    top: 10px;
     margin-left: 5px;
     margin-right: 5px;  
   }
@@ -316,6 +315,8 @@ class ZehnderCard extends LitElement {
       max-width: 60px;
       height: 60px;
       position: static;
+      margin-left: 30px;
+      stroke: white;
   }
 
   .label {
