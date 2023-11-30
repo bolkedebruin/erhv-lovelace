@@ -123,7 +123,7 @@ class ZehnderCard extends LitElement {
                     </div>
                     <div class="label left">
                       <!-- exhaust fan speed -->
-                      ${Math.trunc(this.hass.states['sensor.exhaust_fan_speed'].state)} rpm
+                      ${Math.trunc(this.hass.states['sensor.ca350_exhaust_fan_speed'].state)} rpm
                     </div>
                   </foreignObject>
                 </g>
