@@ -117,9 +117,7 @@ class ZehnderCard extends LitElement {
                 <g transform="translate(0,293)">
                   <foreignObject class="sensor">
                     <div class="icon left">
-                      <svg>
-                        <use xlink:href='#speed' />
-                      </svg>
+                      <ha-icon class="icon" icon="mdi:speedometer"></ha-icon>
                     </div>
                     <div class="label left">
                       <!-- exhaust fan speed -->
@@ -297,12 +295,13 @@ class ZehnderCard extends LitElement {
   }
 
   .icon {
-      margin: auto;
       max-width: 40px;
       height: 40px;
       position: relative;
       top: 50%;
       transform: scale(1.5,1.5) translate(0,-50%);
+      margin-left: 5px;
+      margin-right: 5px;
   }
 
   .large_icon {
@@ -317,12 +316,14 @@ class ZehnderCard extends LitElement {
       padding-left: 0.2em;
       top: 50%;
       transform: translate(0, -50%);
+      margin-top: 5px;
   }
 
   .large_label {
       position: static;
       padding-left: 0.2em;
       bottom: 0;
+      margin-top: 20px;
   }
 
   .right {
