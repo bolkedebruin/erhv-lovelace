@@ -60,7 +60,7 @@ class ZehnderCard extends LitElement {
               </g>
             </g>
         </svg>
-      </div>
+
       
       <div id="col-out">
         <div id="supply">
@@ -133,6 +133,8 @@ class ZehnderCard extends LitElement {
         <!-- end col-in -->
       </div>
       
+      <!-- end container -->
+      </div>
       <div class="info-row">
       ${this.getAirFilterTmpl()}
       ${this.getPreHeatTmpl()}
