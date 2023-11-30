@@ -140,7 +140,8 @@ class ZehnderCard extends LitElement {
               <g transform="translate(0,90)">
                 <foreignObject class="sensor">
                   <div class="label right">
-                    exhaust fan control
+                    <!-- return air level in %-->
+                    ${Math.trunc(this.hass.states['sensor.ca350_return_air_level'].state)}%
                   </div>
                   <div class="icon right">
                     <!--<svg>
@@ -161,7 +162,8 @@ class ZehnderCard extends LitElement {
               <g transform="translate(0,293)">
                 <foreignObject class="sensor">
                   <div class="label right">
-                    supply fan control
+                    <!-- supply air level in %-->
+                    ${Math.trunc(this.hass.states['sensor.ca350_supply_air_level'].state)}%
                   </div>
                   <div class="icon right">
                     <svg>
@@ -178,6 +180,7 @@ class ZehnderCard extends LitElement {
       ${this.getAirFilterTmpl()}
       ${this.getPreHeatTmpl()}
       ${this.getSummerModeTmpl()}
+      ${this.getBypassTmpl()}
       </div>
     </ha-card>  
     `;
@@ -199,13 +202,13 @@ class ZehnderCard extends LitElement {
     }
   }
 
-  //  getBypassTmpl() {
-  //    if (this.hass.states['binary_sensor.bypass_valve'].state == 'on') {
-  //      return html `<ha-icon icon="mdi:electric-switch"></ha-icon>`;
-  //    } else {
-  //      return html `<ha-icon class="inactive" icon="mdi:electric-switch"></ha-icon>`;
-  //    }
-  //  }
+  getBypassTmpl() {
+      if (this.hass.states['binary_sensor.ca350_bypass_valve'].state == 'on') {
+        return html `<ha-icon icon="mdi:electric-switch"></ha-icon>`;
+      } else {
+        return html `<ha-icon class="inactive" icon="mdi:electric-switch"></ha-icon>`;
+      }
+  }
 
   getPreHeatTmpl() {
     if (this.hass.states['binary_sensor.ca350_preheating_status'].state == 'on') {
