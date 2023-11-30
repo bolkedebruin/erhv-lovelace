@@ -4,7 +4,7 @@ import {
   css
 } from "https://unpkg.com/lit-element@2.0.1/lit-element.js?module";
 
-class SwegonCasaCard extends LitElement {
+class ZehnderCard extends LitElement {
   static get properties() {
     return {
       hass: {},
@@ -14,7 +14,7 @@ class SwegonCasaCard extends LitElement {
 
   static getConfigElement() {
     // Create and return an editor element
-    return document.createElement("swegon-casa-card-editor");
+    return document.createElement("zehnder-card-editor");
   }
 
   static getStubConfig() {
@@ -87,7 +87,8 @@ class SwegonCasaCard extends LitElement {
               <g transform="translate(0,-12)">
                 <foreignObject class="sensor">
                   <div class="label left">
-                    ${this.hass.states['sensor.swegon_external_fresh_air_temperature'].state}°C
+                    <!-- outside temperature -->
+                    ${this.hass.states['sensor.ca350_outside_temperature'].state}°C
                   </div>
                 </foreignObject>
               </g>
@@ -100,14 +101,16 @@ class SwegonCasaCard extends LitElement {
                       <ha-icon class="icon" icon="mdi:speedometer"></ha-icon>
                     </div>
                     <div class="label left">
-                      ${Math.trunc(this.hass.states['sensor.swegon_supply_fan_rpm'].state)} rpm
+                      <!-- supply fan rpm -->
+                      ${Math.trunc(this.hass.states['sensor.ca350_supply_fan_speed'].state)} rpm
                     </div>
                   </foreignObject>
                 </g>
                 <g transform="translate(0,190)">
                   <foreignObject class="sensor">
                       <div class="label left">
-                        ${this.hass.states['sensor.swegon_exhaust_air_temperature'].state}°C
+                        <!-- exhaust air temperature -->
+                        ${this.hass.states['sensor.ca350_exhaust_temperature'].state}°C
                       </div>
                   </foreignObject>
                 </g>
@@ -119,7 +122,8 @@ class SwegonCasaCard extends LitElement {
                       </svg>
                     </div>
                     <div class="label left">
-                      ${Math.trunc(this.hass.states['sensor.swegon_extract_fan_rpm'].state)} rpm
+                      <!-- exhaust fan speed -->
+                      ${Math.trunc(this.hass.states['sensor.exhaust_fan_speed'].state)} rpm
                     </div>
                   </foreignObject>
                 </g>
@@ -128,14 +132,15 @@ class SwegonCasaCard extends LitElement {
               <g transform="translate(0,-12)">
                 <foreignObject class="sensor">
                   <div class="label right">
-                    ${this.hass.states['sensor.swegon_extract_air_temp'].state}°C
+                    <!-- return temperature -->
+                    ${this.hass.states['sensor.ca350_return_temperature'].state}°C
                   </div>
                 </foreignObject> 
               </g>
               <g transform="translate(0,90)">
                 <foreignObject class="sensor">
                   <div class="label right">
-                    ${Math.trunc(this.hass.states['sensor.swegon_exhaust_fan_control'].state)}%
+                    exhaust fan control
                   </div>
                   <div class="icon right">
                     <!--<svg>
@@ -148,14 +153,15 @@ class SwegonCasaCard extends LitElement {
               <g transform="translate(0,190)">
                 <foreignObject class="sensor">
                   <div class="label right">
-                    ${this.hass.states['sensor.swegon_supply_air_temp'].state}°C
+                    <!-- supply air temperature -->
+                    ${this.hass.states['sensor.ca350_supply_temperature'].state}°C
                   </div>
                 </foreignObject>
               </g>
               <g transform="translate(0,293)">
                 <foreignObject class="sensor">
                   <div class="label right">
-                    ${Math.trunc(this.hass.states['sensor.swegon_supply_fan_control'].state)}%
+                    supply fan control
                   </div>
                   <div class="icon right">
                     <svg>
@@ -186,7 +192,7 @@ class SwegonCasaCard extends LitElement {
   //  }
 
   getAirFilterTmpl() {
-    if (this.hass.states['binary_sensor.swegon_filter_guard_info'].state != 'on') {
+    if (this.hass.states['binary_sensor.ca350_filter_status'].state != 'on') {
       return html `<ha-svg-icon class="inactive" icon="mdi:air-filter"></ha-svg-icon>`;
     } else {
       return html `<ha-svg-icon class="warning" icon="mdi:air-filter"></ha-svg-icon>`;
@@ -202,7 +208,7 @@ class SwegonCasaCard extends LitElement {
   //  }
 
   getPreHeatTmpl() {
-    if (this.hass.states['binary_sensor.swegon_preheater_active'].state == 'on') {
+    if (this.hass.states['binary_sensor.ca350_preheating_status'].state == 'on') {
       return html `<ha-icon icon="mdi:radiator"></ha-icon>`;
     } else {
       return html `<ha-icon icon="mdi:radiator-off"></ha-icon>`;
@@ -210,7 +216,7 @@ class SwegonCasaCard extends LitElement {
   }
 
   getSummerModeTmpl() {
-    if (this.hass.states['binary_sensor.swegon_summer_cooling_active'].state == 'off') {
+    if (this.hass.states['binary_sensor.ca350_summer_mode'].state == 'off') {
       return html `<ha-icon icon="mdi:snowflake"></ha-icon>`;
     } else {
       return html `<ha-icon class="inactive" icon="mdi:weather-sunny"></ha-icon>`;
@@ -361,18 +367,18 @@ class SwegonCasaCard extends LitElement {
   }
 }
 
-customElements.define("swegon-casa-card", SwegonCasaCard);
+customElements.define("zehnder-card", ZehnderCard);
 
 // Next we add our card to the list of custom cards for the card picker
 window.customCards = window.customCards || []; // Create the list if it doesn't exist. Careful not to overwrite it
 window.customCards.push({
-  type: "swegon-casa-card",
-  name: "Swegon Casa Card",
-  description: "Custom card for Swegon Casa energy reclaiming home ventilation aggregates.",
+  type: "zehnder-card",
+  name: "Zehnder Card",
+  description: "Card for Zehnder energy reclaiming home ventilation aggregates.",
 });
 
 // Finally we create and register the editor itself
-class SwegonCasaCardEditor extends LitElement {
+class ZehnderCardEditor extends LitElement {
 
   static get properties() {
     return {
@@ -422,4 +428,4 @@ class SwegonCasaCardEditor extends LitElement {
   }
 }
 
-customElements.define("swegon-casa-card-editor", SwegonCasaCardEditor);
+customElements.define("zehnder-card-editor", ZehnderCardEditor);
