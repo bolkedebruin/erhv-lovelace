@@ -141,11 +141,10 @@ class ZehnderCard extends LitElement {
                     <!-- return air level in %-->
                     ${Math.trunc(this.hass.states['sensor.ca350_return_air_level'].state)}%
                   </div>
-                  <div class="icon right">
-                    <!--<svg>
+                  <div class="medium_icon right">
+                    <svg>
                       <use class="spin_extract" xlink:href='#fan' />
-                    </svg>-->
-                    <ha-svg-icon class="spin icon" icon="mdi:fan"></ha-svg-icon>
+                    </svg>
                   </div>
                 </foreignObject>
               </g>
@@ -163,7 +162,7 @@ class ZehnderCard extends LitElement {
                     <!-- supply air level in %-->
                     ${Math.trunc(this.hass.states['sensor.ca350_supply_air_level'].state)}%
                   </div>
-                  <div class="icon right">
+                  <div class="medium_icon right">
                     <svg>
                       <use class="spin_supply" xlink:href='#fan' />
                     </svg>
@@ -296,14 +295,22 @@ class ZehnderCard extends LitElement {
 
   .icon {
       max-width: 40px;
-      height: 40px;
       position: relative;
-      top: 50%;
+      top: 12px;
       transform: scale(1.5,1.5) translate(0,-50%);
       margin-left: 5px;
       margin-right: 5px;
   }
-
+  
+  .medium_icon {
+    max-width: 40px;
+    position: relative;
+    top: 36px;
+    transform: scale(1.5,1.5) translate(0,-50%);
+    margin-left: 5px;
+    margin-right: 5px;  
+  }
+      
   .large_icon {
       margin: auto;
       max-width: 60px;
@@ -355,12 +362,16 @@ class ZehnderCard extends LitElement {
       transform-box: fill-box;
       transform-origin: 50% 50%;
       animation: spin 1s linear infinite;
+      fill: white;
+      stroke: white;
   }
 
   .spin_extract {
       transform-box: fill-box;
       transform-origin: 50% 50%;
       animation: spin 1s linear infinite;
+      fill: white;
+      stroke: white;
   }
 
   @keyframes spin {
