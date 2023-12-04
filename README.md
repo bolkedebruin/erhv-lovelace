@@ -9,6 +9,6 @@ Use Modbus to connect your Swegon Casa to Homeassistant and then use this lovela
 ```
 resources:
   - type: module
-    url: /local/lovelace-swegon-casa/zehnder-card.js
+    url: /local/lovelace-swegon-casa/zehnder-card.ts
 ```
 * Add a card with `type: 'custom:swegon-casa-card'` and `entity: 'climate.put-your-swegon-casa-name-here'` to your UI.
