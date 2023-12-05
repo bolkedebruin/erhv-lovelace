@@ -1,0 +1,38 @@
+{
+  "name": "heat-exchange-card",
+  "version": "1.0.0",
+  "description": "A homeassistant heat exchange card - for, for example, the ComfoAir, WHR, Swegon Casa ",
+  "main": "dist/heat-exchange-graph-card.js",
+  "source": "src/main.ts",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "build": "rollup -c",
+    "test:watch": "jest --watchAll",
+    "version": "npm run build && git add .",
+    "npm-upgrade": "npx npm-upgrade"
+  },
+  "keywords": [
+    "homeassistant",
+    "whr930",
+    "whr950",
+    "zehnder",
+    "stork",
+    "heat-exchange"
+  ],
+  "author": "Bolke de Bruin",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.2.1",
+    "rollup": "^3.8.1",
+    "rollup-plugin-typescript2": "^0.34.1"
+  },
+  "dependencies": {
+    "custom-card-helpers": "^1.9.0",
+    "home-assistant-js-websocket": "^8.0.1",
+    "lit": "^3.1.0"
+  }
+}
