@@ -1,12 +1,11 @@
-import {html, LitElement} from "lit/development";
-import {property, state} from "lit/development/decorators";
+import {html, LitElement} from "lit";
+import {property, state} from "lit/decorators.js";
 import {HomeAssistant, LovelaceCardEditor} from "custom-card-helpers";
 import {ZehnderConfig} from "./types";
 
-class ZehnderCardEditor extends LitElement implements LovelaceCardEditor {
+export class ZehnderCardEditor extends LitElement implements LovelaceCardEditor {
     @state() private _config?: ZehnderConfig;
     @property({attribute: false}) public hass?: HomeAssistant;
-    @state() private _configEntities?: LovelaceRowConfig[];
 
     // setConfig works the same way as for the card itself
     setConfig(config: ZehnderConfig) {

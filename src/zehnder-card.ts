@@ -18,9 +18,8 @@ export class ZehnderCard extends LitElement implements LovelaceCard {
     @property({attribute: false}) public hass?: HomeAssistant;
     @state() private _config?: ZehnderConfig;
 
-    public static async getConfigForm() {
-        // Create and return an editor element
-        return (await import("./editor")).default;
+    protected async getConfigElement()  {
+        return document.createElement("zehnder-card-editor");
     }
 
     static getStubConfig(
