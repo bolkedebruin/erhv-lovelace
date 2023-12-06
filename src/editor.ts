@@ -1,16 +1,16 @@
 import {html, LitElement} from "lit";
 import {customElement, property, state} from "lit/decorators.js";
 import {HomeAssistant, LovelaceCardEditor} from "custom-card-helpers";
-import {ZehnderConfig} from "./types";
-import {cardOptionsSchema} from "./schema";
+import {ERHVCardConfig} from "./types";
+import {ERHVSchema} from "./schema";
 
-//@customElement("zehnder-card-editor")
-export class ZehnderCardEditor extends LitElement implements LovelaceCardEditor {
-    @state() private _config?: ZehnderConfig;
+//@customElement("erhv-card-editor")
+export class ERHVCardEditor extends LitElement implements LovelaceCardEditor {
+    @state() private _config?: ERHVCardConfig;
     @property({attribute: false}) public hass?: HomeAssistant;
 
     // setConfig works the same way as for the card itself
-    setConfig(config: ZehnderConfig) {
+    setConfig(config: ERHVCardConfig) {
         this._config = config;
     }
 
@@ -47,7 +47,7 @@ export class ZehnderCardEditor extends LitElement implements LovelaceCardEditor 
             <div class="card-config">
                 <ha-form 
                         .hass=${this.hass}
-                        .schema=${cardOptionsSchema}
+                        .schema=${ERHVSchema}
                         .computeLabel=${(s) => s.label ?? s.name}
                         .data=${data}
                         @value-changed=${this.entityChanged}
@@ -58,4 +58,4 @@ export class ZehnderCardEditor extends LitElement implements LovelaceCardEditor 
     }
 }
 
-customElements.define("zehnder-card-editor", ZehnderCardEditor);
+customElements.define("zehnder-card-editor", ERHVCardEditor);

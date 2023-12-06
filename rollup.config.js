@@ -8,7 +8,7 @@ const dev = process.env.ROLLUP_WATCH;
 export default {
   input: "src/main.ts",
   output: {
-    file: "dist/heat-exchange-card.js",
+    file: "dist/erhv-card.js",
     format: "es",
   },
   plugins: [

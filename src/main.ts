@@ -1,5 +1,5 @@
-import {ZehnderCard} from "./zehnder-card";
-import {ZehnderCardEditor} from "./editor";
+import {ERHVCard} from "./erhv-card";
+import {ERHVCardEditor} from "./editor";
 
 declare global {
     interface Window {
@@ -7,14 +7,14 @@ declare global {
     }
 }
 
-customElements.define("zehnder-card", ZehnderCard);
-customElements.define("zehnder-card-editor", ZehnderCardEditor);
+customElements.define("erhv-card", ERHVCard);
+customElements.define("erhv-card-editor", ERHVCardEditor);
 
 // Next we add our card to the list of custom cards for the card picker
 window.customCards = window.customCards || []; // Create the list if it doesn't exist. Careful not to overwrite it
 window.customCards.push({
-    type: "zehnder-card",
-    name: "Zehnder Card",
-    description: "Card for Zehnder energy reclaiming home ventilation aggregates.",
+    type: "erhv-card",
+    name: "Energy Reclaiming Home Ventilation Card",
+    description: "Card for energy reclaiming home ventilation aggregates.",
 });
 

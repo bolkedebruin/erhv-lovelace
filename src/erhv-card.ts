@@ -7,16 +7,16 @@ import {customElement, property, state} from "lit/decorators.js";
 
 import {HomeAssistant, LovelaceCard} from "custom-card-helpers";
 import {findEntities} from "./common/find-entities";
-import {ZehnderConfig} from "./types";
+import {ERHVCardConfig} from "./types";
 
 const validEntityId = /^(\w+)\.(\w+)$/;
 const isValidEntityId = (entityId: string) =>
     validEntityId.test(entityId);
 
 //@customElement("zehnder-card")
-export class ZehnderCard extends LitElement implements LovelaceCard {
+export class ERHVCard extends LitElement implements LovelaceCard {
     @property({attribute: false}) public hass?: HomeAssistant;
-    @state() private _config?: ZehnderConfig;
+    @state() private _config?: ERHVCardConfig;
 
     static getConfigElement()  {
         return document.createElement("zehnder-card-editor");
@@ -40,7 +40,7 @@ export class ZehnderCard extends LitElement implements LovelaceCard {
         return {climate_entity: foundEntities[0] || ""};
     }
 
-    public setConfig(config: ZehnderConfig): void {
+    public setConfig(config: ERHVCardConfig): void {
         if (!config.entity) {
             throw new Error("Entity must be specified");
         }

@@ -1,6 +1,6 @@
 import {LovelaceCardConfig} from "custom-card-helpers";
 
-export interface ZehnderConfig extends LovelaceCardConfig {
+export interface ERHVCardConfig extends LovelaceCardConfig {
     header: string;
     climate_entity: string;
     name: string;

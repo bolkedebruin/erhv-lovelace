@@ -1,4 +1,4 @@
-export const cardOptionsSchema = [
+export const ERHVSchema = [
     {
         type: "grid",
         name: "",
