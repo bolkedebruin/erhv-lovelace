@@ -13,12 +13,12 @@ const validEntityId = /^(\w+)\.(\w+)$/;
 const isValidEntityId = (entityId: string) =>
     validEntityId.test(entityId);
 
-@customElement("zehnder-card")
+//@customElement("zehnder-card")
 export class ZehnderCard extends LitElement implements LovelaceCard {
     @property({attribute: false}) public hass?: HomeAssistant;
     @state() private _config?: ZehnderConfig;
 
-    protected async getConfigElement()  {
+    static getConfigElement()  {
         return document.createElement("zehnder-card-editor");
     }
 
@@ -37,7 +37,7 @@ export class ZehnderCard extends LitElement implements LovelaceCard {
             includeDomains
         );
         // Return a minimal configuration that will result in a working card configuration
-        return {entity: foundEntities[0] || ""};
+        return {climate_entity: foundEntities[0] || ""};
     }
 
     public setConfig(config: ZehnderConfig): void {
@@ -62,10 +62,10 @@ export class ZehnderCard extends LitElement implements LovelaceCard {
             return html`Custom card not found!`;
         }
 
-        const stateObj = this.hass.states[this._config.entity];
+        const stateObj = this.hass.states[this._config.climate_entity];
         if (!stateObj) {
             return html`
-                <ha-card>Unknown entity: ${this._config.entity}</ha-card> `;
+                <ha-card>Unknown entity: ${this._config.climate_entity}</ha-card> `;
         }
 
         const name = this._config.name || "NoName";
@@ -127,10 +127,10 @@ export class ZehnderCard extends LitElement implements LovelaceCard {
                         <div id="intake">
                             <svg viewBox="0 0 212.5 180">
                                 <text font-size="24px" x="10" y="35">
-                                    ${this.hass.states['sensor.ca350_outside_temperature'].state}°C
+                                    ${this.hass.states[this._config.intake_temperature].state}°C
                                 </text>
                                 <text font-size="24px" x="54" y="135">
-                                    ${this.hass.states['sensor.ca350_supply_fan_speed'].state} rpm
+                                    ${this.hass.states[this._config.intake_fan_speed_rpm].state} rpm
                                 </text>
                                 <g transform="translate(10, 110) scale(0.2, 0.2)">
                                     <svg preserveAspectRatio="xMidYMid meet" focusable="false" role="img"
@@ -148,10 +148,10 @@ export class ZehnderCard extends LitElement implements LovelaceCard {
                         <div id="exhaust">
                             <svg viewBox="0 0 212.5 180">
                                 <text font-size="24px" x="10" y="58">
-                                    ${this.hass.states['sensor.ca350_exhaust_temperature'].state}°C
+                                    ${this.hass.states[this._config.exhaust_temperature].state}°C
                                 </text>
                                 <text font-size="24px" x="54" y="158">
-                                    ${Math.trunc(Number(this.hass.states['sensor.ca350_exhaust_fan_speed'].state))} rpm
+                                    ${Math.trunc(Number(this.hass.states[this._config.exhaust_fan_speed_rpm].state))} rpm
                                 </text>
                                 <g transform="translate(10, 133) scale(0.2, 0.2)">
                                     <svg preserveAspectRatio="xMidYMid meet" focusable="false" role="img"
@@ -172,7 +172,7 @@ export class ZehnderCard extends LitElement implements LovelaceCard {
                         <div id="target_temperature">
                             <svg viewBox="0 0 80 40">
                                 <text x="50%" dx="1" y="25%" text-anchor="middle" style="font-size:13px">
-                                    ${this.hass.states[this._config.entity].attributes.temperature}
+                                    ${this.hass.states[this._config.climate_entity].attributes.temperature}
                                     <tspan dx="-3" dy="-6.5" style="font-size:4px">°C</tspan>
                                 </text>
                             </svg>
@@ -186,10 +186,10 @@ export class ZehnderCard extends LitElement implements LovelaceCard {
                         <div id="return">
                             <svg viewBox="0 0 212.5 180">
                                 <text font-size="24px" x="204.5" y="35" text-anchor="end">
-                                    ${this.hass.states['sensor.ca350_return_temperature'].state}°C
+                                    ${this.hass.states[this._config.return_temperature].state}°C
                                 </text>
                                 <text font-size="24px" x="160" y="135" text-anchor="end">
-                                    ${Math.trunc(Number(this.hass.states['sensor.ca350_return_temperature'].state))}%
+                                    ${Math.trunc(Number(this.hass.states[this._config.exhaust_fan_speed_rpm].state))}%
                                 </text>
                                 <g transform="translate(160, 110) scale(0.2, 0.2)">
                                     <svg preserveAspectRatio="xMidYMid meet" focusable="false" role="img"
@@ -207,10 +207,10 @@ export class ZehnderCard extends LitElement implements LovelaceCard {
                         <div id="supply">
                             <svg viewBox="0 0 212.5 180">
                                 <text font-size="24px" x="204.5" y="58" text-anchor="end">
-                                    ${this.hass.states['sensor.ca350_supply_temperature'].state}°C
+                                    ${this.hass.states[this._config.supply_temperature].state}°C
                                 </text>
                                 <text font-size="24px" x="160" y="158" text-anchor="end">
-                                    ${Math.trunc(Number(this.hass.states['sensor.ca350_supply_air_level'].state))}%
+                                    ${Math.trunc(Number(this.hass.states[this._config.intake_fan_speed_percentage].state))}%
                                 </text>
                                 <g transform="translate(160, 133) scale(0.2, 0.2)">
                                     <svg preserveAspectRatio="xMidYMid meet" focusable="false" role="img"
@@ -249,10 +249,10 @@ export class ZehnderCard extends LitElement implements LovelaceCard {
     //  }
 
     getAirFilterTmpl() {
-        if (!this.hass) {
+        if (!this.hass || !this._config) {
             return html``;
         }
-        if (this.hass.states['binary_sensor.ca350_filter_status'].state != 'on') {
+        if (this.hass.states[this._config.filter_warning].state != 'on') {
             return html`
                 <ha-icon class="inactive" icon="mdi:air-filter"></ha-icon>`;
         } else {
@@ -262,10 +262,10 @@ export class ZehnderCard extends LitElement implements LovelaceCard {
     }
 
     getBypassTmpl() {
-        if (!this.hass) {
+        if (!this.hass || !this._config) {
             return html``;
         }
-        if (this.hass.states['binary_sensor.ca350_bypass_valve'].state == 'on') {
+        if (this.hass.states[this._config.bypass_state].state == 'on') {
             return html`
                 <ha-icon icon="mdi:electric-switch"></ha-icon>`;
         } else {
@@ -275,10 +275,10 @@ export class ZehnderCard extends LitElement implements LovelaceCard {
     }
 
     getPreHeatTmpl() {
-        if (!this.hass) {
+        if (!this.hass || !this._config) {
             return html``;
         }
-        if (this.hass.states['binary_sensor.ca350_preheating_status'].state == 'on') {
+        if (this.hass.states[this._config.preheater_state].state == 'on') {
             return html`
                 <ha-icon icon="mdi:radiator"></ha-icon>`;
         } else {
@@ -288,10 +288,10 @@ export class ZehnderCard extends LitElement implements LovelaceCard {
     }
 
     getSummerModeTmpl() {
-        if (!this.hass) {
+        if (!this.hass || !this._config) {
             return html``;
         }
-        if (this.hass.states['binary_sensor.ca350_summer_mode'].state == 'off') {
+        if (this.hass.states[this._config?.summer_mode].state == 'off') {
             return html`
                 <ha-icon icon="mdi:snowflake" style="color: cyan;"></ha-icon>`;
         } else {

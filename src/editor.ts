@@ -1,8 +1,10 @@
 import {html, LitElement} from "lit";
-import {property, state} from "lit/decorators.js";
+import {customElement, property, state} from "lit/decorators.js";
 import {HomeAssistant, LovelaceCardEditor} from "custom-card-helpers";
 import {ZehnderConfig} from "./types";
+import {cardOptionsSchema} from "./schema";
 
+//@customElement("zehnder-card-editor")
 export class ZehnderCardEditor extends LitElement implements LovelaceCardEditor {
     @state() private _config?: ZehnderConfig;
     @property({attribute: false}) public hass?: HomeAssistant;
@@ -14,18 +16,18 @@ export class ZehnderCardEditor extends LitElement implements LovelaceCardEditor 
 
     // This function is called when the input element of the editor loses focus
     entityChanged(ev) {
+        if (!this._config) {
+            return;
+        }
 
-        // We make a copy of the current config so we don't accidentally overwrite anything too early
-        const config = Object.assign({}, this._config);
-        // Then we update the entity value with what we just got from the input field
-        config.entity = ev.target.value;
-        // And finally write back the updated configuration all at once
-        this._config = config;
+        const data = ev.detail.value;
+
+        this._config = { ...this._config, ...data};
 
         // A config-changed event will tell lovelace we have made changed to the configuration
         // this make sure the changes are saved correctly later and will update the preview
         const event = new CustomEvent("config-changed", {
-            detail: {config: config},
+            detail: {config: this._config},
             bubbles: true,
             composed: true,
         });
@@ -37,9 +39,20 @@ export class ZehnderCardEditor extends LitElement implements LovelaceCardEditor 
             return html``;
         }
 
+        const data = { ...this._config };
+        data.show_empty = data.show_empty ?? true;
+
         // @focusout below will call entityChanged when the input field loses focus (e.g. the user tabs away or clicks outside of it)
         return html`
-     
+            <div class="card-config">
+                <ha-form 
+                        .hass=${this.hass}
+                        .schema=${cardOptionsSchema}
+                        .computeLabel=${(s) => s.label ?? s.name}
+                        .data=${data}
+                        @value-changed=${this.entityChanged}
+                </ha-form>
+            </div>
 
         `;
     }

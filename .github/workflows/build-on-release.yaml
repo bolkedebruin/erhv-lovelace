@@ -22,4 +22,4 @@ jobs:
       - name: Upload release asset
         uses: svenstaro/upload-release-action@v2
         with:
-          file: dist/heat-exchange-graph-card.js
+          file: dist/heat-exchange-card.js
