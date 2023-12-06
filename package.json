@@ -1,6 +1,6 @@
 {
   "name": "heat-exchange-card",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A homeassistant heat exchange card - for, for example, the ComfoAir, WHR, Swegon Casa ",
   "main": "dist/heat-exchange-card.js",
   "source": "src/main.ts",
