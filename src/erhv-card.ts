@@ -189,7 +189,7 @@ export class ERHVCard extends LitElement implements LovelaceCard {
                                     ${this.hass.states[this._config.return_temperature].state}°C
                                 </text>
                                 <text font-size="24px" x="160" y="135" text-anchor="end">
-                                    ${Math.trunc(Number(this.hass.states[this._config.exhaust_fan_speed_rpm].state))}%
+                                    ${Math.trunc(Number(this.hass.states[this._config.exhaust_fan_speed_percentage].state))}%
                                 </text>
                                 <g transform="translate(160, 110) scale(0.2, 0.2)">
                                     <svg preserveAspectRatio="xMidYMid meet" focusable="false" role="img"
