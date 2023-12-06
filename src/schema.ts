@@ -25,7 +25,7 @@ export const ERHVSchema = [
                 label: "Intake fan speed rpm",
             },
             {
-                name: "intake_fan_speed_rpm",
+                name: "intake_fan_speed_percentage",
                 selector: { entity: { domain: ["sensor"]}},
                 label: "Intake fan speed %",
             },
