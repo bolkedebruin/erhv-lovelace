@@ -6,7 +6,7 @@ This is a energy reclaiming home ventilation card for homeassistant lovelace. Th
 to visualize your energy reclaiming and ventilation data from several vendors (like Stork, Zehnder, Swegon Casa, etc.) 
 in a nice way.
 
-![screenshot](https://github.com/bolkedebruin/erhv-lovelace/blob/main/.github/screenshot-1.png?raw=true)
+![Screenshot - main](https://raw.githubusercontent.com/bolkedebruin/erhv-lovelace/blob/main/docs/screenshot-1.jpg)
 
 # Installation
 
