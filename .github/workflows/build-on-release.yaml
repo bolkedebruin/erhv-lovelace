@@ -14,7 +14,7 @@ jobs:
         run: npm install
 
       - name: Update package.json
-        run: npm version ${{ github.ref_name }} --git-tag-version false
+        run: npm version ${{ github.ref_name }} --git-tag-version false --alow-same-version true
 
       - name: Build
         run: npm run build
