@@ -20,6 +20,7 @@ in a nice way.
 ```
 type: custom:erhv-card
 icon: mdi:account
+entity: climate.ca350_climate
 supply_temperature: sensor.ca350_supply_temperature
 climate_entity: climate.ca350_climate
 intake_temperature: sensor.ca350_outside_temperature
