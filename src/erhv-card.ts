@@ -13,13 +13,13 @@ const validEntityId = /^(\w+)\.(\w+)$/;
 const isValidEntityId = (entityId: string) =>
     validEntityId.test(entityId);
 
-//@customElement("zehnder-card")
+@customElement("erhv-card")
 export class ERHVCard extends LitElement implements LovelaceCard {
     @property({attribute: false}) public hass?: HomeAssistant;
     @state() private _config?: ERHVCardConfig;
 
     static getConfigElement()  {
-        return document.createElement("zehnder-card-editor");
+        return document.createElement("erhv-card-editor");
     }
 
     static getStubConfig(
@@ -296,7 +296,7 @@ export class ERHVCard extends LitElement implements LovelaceCard {
                 <ha-icon icon="mdi:snowflake" style="color: cyan;"></ha-icon>`;
         } else {
             return html`
-                <ha-icon class="summer" icon="mdi:weather-sunny"></ha-icon>`;
+                <ha-icon class="s   ummer" icon="mdi:weather-sunny"></ha-icon>`;
         }
     }
 
@@ -361,7 +361,7 @@ export class ERHVCard extends LitElement implements LovelaceCard {
             color: var(--mode-color);
           }
 
-          #modes > * {
+          #modes {
             color: var(--disabled-text-color);
             cursor: pointer;
             display: inline-block;
@@ -452,7 +452,7 @@ export class ERHVCard extends LitElement implements LovelaceCard {
           }
 
           .warning {
-            color: #d80707db;
+            color: var(--state-binary_sensor-problem-on-color);
           }
 
           .icon {

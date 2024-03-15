@@ -19,4 +19,6 @@ export interface ERHVCardConfig extends LovelaceCardConfig {
     bypass_state: string;
     preheater_state: string;
     summer_mode: string;
+    show_efficiency: boolean;
+    show_set_point_temperature: boolean;
 }

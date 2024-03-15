@@ -7,8 +7,8 @@ declare global {
     }
 }
 
-customElements.define("erhv-card", ERHVCard);
-customElements.define("erhv-card-editor", ERHVCardEditor);
+//customElements.define("erhv-card", ERHVCard);
+//customElements.define("erhv-card-editor", ERHVCardEditor);
 
 // Next we add our card to the list of custom cards for the card picker
 window.customCards = window.customCards || []; // Create the list if it doesn't exist. Careful not to overwrite it

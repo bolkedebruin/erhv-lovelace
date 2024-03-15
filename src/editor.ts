@@ -4,7 +4,7 @@ import {HomeAssistant, LovelaceCardEditor} from "custom-card-helpers";
 import {ERHVCardConfig} from "./types";
 import {ERHVSchema} from "./schema";
 
-//@customElement("erhv-card-editor")
+@customElement("erhv-card-editor")
 export class ERHVCardEditor extends LitElement implements LovelaceCardEditor {
     @state() private _config?: ERHVCardConfig;
     @property({attribute: false}) public hass?: HomeAssistant;
@@ -57,5 +57,3 @@ export class ERHVCardEditor extends LitElement implements LovelaceCardEditor {
         `;
     }
 }
-
-customElements.define("zehnder-card-editor", ERHVCardEditor);
