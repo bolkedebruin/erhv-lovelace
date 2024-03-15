@@ -386,4 +386,4 @@ function t(t,e,s,i){var n,r=arguments.length,o=r<3?e:null===i?i=Object.getOwnPro
                 </ha-form>
             </div>
 
-        `}};t([dt()],yt.prototype,"_config",void 0),t([ct({attribute:!1})],yt.prototype,"hass",void 0),yt=t([at("erhv-card-editor")],yt),customElements.define("erhv-card",gt),customElements.define("erhv-card-editor",yt),window.customCards=window.customCards||[],window.customCards.push({type:"erhv-card",name:"Energy Reclaiming Home Ventilation Card",description:"Card for energy reclaiming home ventilation aggregates."});
+        `}};t([dt()],yt.prototype,"_config",void 0),t([ct({attribute:!1})],yt.prototype,"hass",void 0),yt=t([at("erhv-card-editor")],yt),window.customCards=window.customCards||[],window.customCards.push({type:"erhv-card",name:"Energy Reclaiming Home Ventilation Card",description:"Card for energy reclaiming home ventilation aggregates."});
