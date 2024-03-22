@@ -68,7 +68,7 @@ export const ERHVSchema = [
             {
                 name: "filter_expiry_limit",
                 selector: {entity: {domain: ["sensor"]}},
-                label: "Filter elapsed time",
+                label: "Filter expiry limit",
             },
             {
                 name: "filter_warning",
