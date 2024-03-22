@@ -17,6 +17,8 @@ in a nice way.
 * Add a card with `type: 'custom:erhv-card'`.
 * Configure the card with the entity of your energy reclaiming system and its sensors.
 
+Example configuration:
+
 ```
 type: custom:erhv-card
 icon: mdi:account
@@ -36,3 +38,24 @@ bypass_state: binary_sensor.ca350_bypass_valve
 preheater_state: binary_sensor.ca350_preheating_status
 summer_mode: binary_sensor.ca350_summer_mode
 ```
+
+| Option                          | Description                                                                     | Required |
+|---------------------------------|---------------------------------------------------------------------------------|----------|
+| `name`                          | Name on the card                                                                | Yes      |
+| `entity`                        | The entity to be displayed.                                                     | Yes      |
+| `climate_entity:`               | The entity to be displayed.                                                     | Yes      |
+| `supply_temperature:`           | Entity providing supply temperature                                             | Yes      |
+| `return_temperature:`           | Entity providing Return temperature                                             | Yes      |
+| `intake_temperature:`           | Entity providing Intake (outside) temperature                                   | Yes      |
+| `intake_fan_speed_rpm:`         | Entity providing Intake fan speed rpm                                           | Yes      |
+| `exhaust_temperature:`          | Entity providing Exhaust temperature sensor                                     | Yes      |
+| `exhaust_fan_speed_rpm:`        | Entity providing Exhaust fan speed rpm                                          | Yes      |
+| `exhaust_fan_speed_percentage:` | Entity providing Exhaust fan speed %                                            | Yes      |
+| `filter_elapsed_time:`          | Entity providing filter elapsed time                                            | Yes      |
+| `filter_warning:`               | The entity providing boolean filter warning.                                    | Optional |
+| `bypass_state:`                 | For some devices an entity providing the by-pass state may be available.        | Optional |
+| `preheater_state:`              | For some devices an entity providing the preheater state may be available.      | Optional |
+| `summer_mode:`                  | For some devices an entity providing the state of Summer Mode may be available. | Optional |
+
+> Note: The icons in the view will be displayed according to the state of the optional fields above. If the field is omitted then the icon will not be displayed.
+
