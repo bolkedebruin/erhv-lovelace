@@ -249,7 +249,7 @@ export class ERHVCard extends LitElement implements LovelaceCard {
     //  }
 
     getAirFilterTmpl() {
-        if (!this.hass || !this._config) {
+        if (!this.hass || !this._config || !this._config.filter_warning) {
             return html``;
         }
         if (this.hass.states[this._config.filter_warning].state != 'on') {
@@ -262,7 +262,7 @@ export class ERHVCard extends LitElement implements LovelaceCard {
     }
 
     getBypassTmpl() {
-        if (!this.hass || !this._config) {
+        if (!this.hass || !this._config || !this._config.bypass_state) {
             return html``;
         }
         if (this.hass.states[this._config.bypass_state].state == 'on') {
@@ -275,7 +275,7 @@ export class ERHVCard extends LitElement implements LovelaceCard {
     }
 
     getPreHeatTmpl() {
-        if (!this.hass || !this._config) {
+        if (!this.hass || !this._config || !this._config.preheater_state) {
             return html``;
         }
         if (this.hass.states[this._config.preheater_state].state == 'on') {
@@ -288,7 +288,7 @@ export class ERHVCard extends LitElement implements LovelaceCard {
     }
 
     getSummerModeTmpl() {
-        if (!this.hass || !this._config) {
+        if (!this.hass || !this._config || !this._config.summer_mode) {
             return html``;
         }
         if (this.hass.states[this._config?.summer_mode].state == 'off') {
