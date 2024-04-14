@@ -265,7 +265,7 @@ export class ERHVCard extends LitElement implements LovelaceCard {
         if (!this.hass || !this._config || !this._config.bypass_state) {
             return html``;
         }
-        if (this.hass.states[this._config.bypass_state].state == 'on') {
+        if (this.hass.states[this._config.bypass_state].state == 'open') {
             return html`
                 <ha-icon icon="mdi:electric-switch"></ha-icon>`;
         } else {
@@ -296,7 +296,7 @@ export class ERHVCard extends LitElement implements LovelaceCard {
                 <ha-icon icon="mdi:snowflake" style="color: cyan;"></ha-icon>`;
         } else {
             return html`
-                <ha-icon class="s   ummer" icon="mdi:weather-sunny"></ha-icon>`;
+                <ha-icon class="summer" style="color: yellow;" icon="mdi:weather-sunny"></ha-icon>`;
         }
     }
 
