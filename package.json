@@ -1,6 +1,6 @@
 {
   "name": "erhv-card",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "A homeassistant heat exchange card - for, for example, the ComfoAir, WHR, Swegon Casa ",
   "main": "dist/erhv-card.js",
   "source": "src/main.ts",
