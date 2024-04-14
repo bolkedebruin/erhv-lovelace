@@ -265,9 +265,9 @@ export class ERHVCard extends LitElement implements LovelaceCard {
         if (!this.hass || !this._config || !this._config.bypass_state) {
             return html``;
         }
-        if (this.hass.states[this._config.bypass_state].state == 'open') {
+        if (this.hass.states[this._config.bypass_state].state == 'on') {
             return html`
-                <ha-icon icon="mdi:electric-switch"></ha-icon>`;
+                <ha-icon icon="mdi:electric-switch-closed"></ha-icon>`;
         } else {
             return html`
                 <ha-icon class="inactive" icon="mdi:electric-switch"></ha-icon>`;
