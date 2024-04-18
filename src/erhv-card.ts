@@ -5,7 +5,7 @@ import {
 } from "lit";
 import {customElement, property, state} from "lit/decorators.js";
 
-import {HomeAssistant, LovelaceCard} from "custom-card-helpers";
+import {fireEvent, HomeAssistant, LovelaceCard} from "custom-card-helpers";
 import {findEntities} from "./common/find-entities";
 import {ERHVCardConfig} from "./types";
 
@@ -57,6 +57,10 @@ export class ERHVCard extends LitElement implements LovelaceCard {
         }
     }
 
+    private _handleMoreInfo(): void {
+        fireEvent(this, "hass-more-info", {entityId: this._config!.entity});
+    }
+
     render() {
         if (!this.hass || !this._config) {
             return html`Custom card not found!`;
@@ -72,7 +76,6 @@ export class ERHVCard extends LitElement implements LovelaceCard {
 
         return html`
             <ha-card>
-                    <!--<p class="title">${name}</p>-->
                 <div class="container">
                     <div id="bg">
                         <svg viewBox="0 0 850 360" xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +174,7 @@ export class ERHVCard extends LitElement implements LovelaceCard {
                     <div id="center">
                         <div id="target_temperature">
                             <svg viewBox="0 0 80 40">
-                                <text x="50%" dx="1" y="25%" text-anchor="middle" style="font-size:13px">
+                                <text x="50%" dx="1" y="25%" text-anchor="middle" style="font-size:13px" @click=${this._handleMoreInfo}>
                                     ${this.hass.states[this._config.climate_entity].attributes.temperature}
                                     <tspan dx="-3" dy="-6.5" style="font-size:4px">°C</tspan>
                                 </text>
@@ -229,7 +232,7 @@ export class ERHVCard extends LitElement implements LovelaceCard {
                 <!-- end container -->
 
                 <div id="info">
-                    <div id="modes">
+                    <div id="modes" @click=${this._handleMoreInfo}>
                         ${this.getAirFilterTmpl()}
                         ${this.getPreHeatTmpl()}
                         ${this.getSummerModeTmpl()}
